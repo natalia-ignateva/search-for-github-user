@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/axios/lib/helpers/bind.js":[function(require,module,exports) {
+})({"node_modules/axios/lib/helpers/bind.js":[function(require,module,exports) {
 'use strict';
 
 module.exports = function bind(fn, thisArg) {
@@ -130,7 +130,7 @@ module.exports = function bind(fn, thisArg) {
   };
 };
 
-},{}],"../node_modules/axios/lib/utils.js":[function(require,module,exports) {
+},{}],"node_modules/axios/lib/utils.js":[function(require,module,exports) {
 'use strict';
 
 var bind = require('./helpers/bind');
@@ -483,7 +483,7 @@ module.exports = {
   stripBOM: stripBOM
 };
 
-},{"./helpers/bind":"../node_modules/axios/lib/helpers/bind.js"}],"../node_modules/axios/lib/helpers/buildURL.js":[function(require,module,exports) {
+},{"./helpers/bind":"node_modules/axios/lib/helpers/bind.js"}],"node_modules/axios/lib/helpers/buildURL.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('./../utils');
@@ -555,7 +555,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
   return url;
 };
 
-},{"./../utils":"../node_modules/axios/lib/utils.js"}],"../node_modules/axios/lib/core/InterceptorManager.js":[function(require,module,exports) {
+},{"./../utils":"node_modules/axios/lib/utils.js"}],"node_modules/axios/lib/core/InterceptorManager.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('./../utils');
@@ -609,7 +609,7 @@ InterceptorManager.prototype.forEach = function forEach(fn) {
 
 module.exports = InterceptorManager;
 
-},{"./../utils":"../node_modules/axios/lib/utils.js"}],"../node_modules/axios/lib/core/transformData.js":[function(require,module,exports) {
+},{"./../utils":"node_modules/axios/lib/utils.js"}],"node_modules/axios/lib/core/transformData.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('./../utils');
@@ -631,14 +631,14 @@ module.exports = function transformData(data, headers, fns) {
   return data;
 };
 
-},{"./../utils":"../node_modules/axios/lib/utils.js"}],"../node_modules/axios/lib/cancel/isCancel.js":[function(require,module,exports) {
+},{"./../utils":"node_modules/axios/lib/utils.js"}],"node_modules/axios/lib/cancel/isCancel.js":[function(require,module,exports) {
 'use strict';
 
 module.exports = function isCancel(value) {
   return !!(value && value.__CANCEL__);
 };
 
-},{}],"../node_modules/axios/lib/helpers/normalizeHeaderName.js":[function(require,module,exports) {
+},{}],"node_modules/axios/lib/helpers/normalizeHeaderName.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('../utils');
@@ -652,7 +652,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
   });
 };
 
-},{"../utils":"../node_modules/axios/lib/utils.js"}],"../node_modules/axios/lib/core/enhanceError.js":[function(require,module,exports) {
+},{"../utils":"node_modules/axios/lib/utils.js"}],"node_modules/axios/lib/core/enhanceError.js":[function(require,module,exports) {
 'use strict';
 
 /**
@@ -696,7 +696,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
   return error;
 };
 
-},{}],"../node_modules/axios/lib/core/createError.js":[function(require,module,exports) {
+},{}],"node_modules/axios/lib/core/createError.js":[function(require,module,exports) {
 'use strict';
 
 var enhanceError = require('./enhanceError');
@@ -716,7 +716,7 @@ module.exports = function createError(message, config, code, request, response) 
   return enhanceError(error, config, code, request, response);
 };
 
-},{"./enhanceError":"../node_modules/axios/lib/core/enhanceError.js"}],"../node_modules/axios/lib/core/settle.js":[function(require,module,exports) {
+},{"./enhanceError":"node_modules/axios/lib/core/enhanceError.js"}],"node_modules/axios/lib/core/settle.js":[function(require,module,exports) {
 'use strict';
 
 var createError = require('./createError');
@@ -743,7 +743,7 @@ module.exports = function settle(resolve, reject, response) {
   }
 };
 
-},{"./createError":"../node_modules/axios/lib/core/createError.js"}],"../node_modules/axios/lib/helpers/cookies.js":[function(require,module,exports) {
+},{"./createError":"node_modules/axios/lib/core/createError.js"}],"node_modules/axios/lib/helpers/cookies.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('./../utils');
@@ -798,7 +798,7 @@ module.exports = (
     })()
 );
 
-},{"./../utils":"../node_modules/axios/lib/utils.js"}],"../node_modules/axios/lib/helpers/isAbsoluteURL.js":[function(require,module,exports) {
+},{"./../utils":"node_modules/axios/lib/utils.js"}],"node_modules/axios/lib/helpers/isAbsoluteURL.js":[function(require,module,exports) {
 'use strict';
 
 /**
@@ -814,7 +814,7 @@ module.exports = function isAbsoluteURL(url) {
   return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
 };
 
-},{}],"../node_modules/axios/lib/helpers/combineURLs.js":[function(require,module,exports) {
+},{}],"node_modules/axios/lib/helpers/combineURLs.js":[function(require,module,exports) {
 'use strict';
 
 /**
@@ -830,7 +830,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
     : baseURL;
 };
 
-},{}],"../node_modules/axios/lib/core/buildFullPath.js":[function(require,module,exports) {
+},{}],"node_modules/axios/lib/core/buildFullPath.js":[function(require,module,exports) {
 'use strict';
 
 var isAbsoluteURL = require('../helpers/isAbsoluteURL');
@@ -852,7 +852,7 @@ module.exports = function buildFullPath(baseURL, requestedURL) {
   return requestedURL;
 };
 
-},{"../helpers/isAbsoluteURL":"../node_modules/axios/lib/helpers/isAbsoluteURL.js","../helpers/combineURLs":"../node_modules/axios/lib/helpers/combineURLs.js"}],"../node_modules/axios/lib/helpers/parseHeaders.js":[function(require,module,exports) {
+},{"../helpers/isAbsoluteURL":"node_modules/axios/lib/helpers/isAbsoluteURL.js","../helpers/combineURLs":"node_modules/axios/lib/helpers/combineURLs.js"}],"node_modules/axios/lib/helpers/parseHeaders.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('./../utils');
@@ -907,7 +907,7 @@ module.exports = function parseHeaders(headers) {
   return parsed;
 };
 
-},{"./../utils":"../node_modules/axios/lib/utils.js"}],"../node_modules/axios/lib/helpers/isURLSameOrigin.js":[function(require,module,exports) {
+},{"./../utils":"node_modules/axios/lib/utils.js"}],"node_modules/axios/lib/helpers/isURLSameOrigin.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('./../utils');
@@ -977,7 +977,7 @@ module.exports = (
     })()
 );
 
-},{"./../utils":"../node_modules/axios/lib/utils.js"}],"../node_modules/axios/lib/adapters/xhr.js":[function(require,module,exports) {
+},{"./../utils":"node_modules/axios/lib/utils.js"}],"node_modules/axios/lib/adapters/xhr.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('./../utils');
@@ -1158,7 +1158,7 @@ module.exports = function xhrAdapter(config) {
   });
 };
 
-},{"./../utils":"../node_modules/axios/lib/utils.js","./../core/settle":"../node_modules/axios/lib/core/settle.js","./../helpers/cookies":"../node_modules/axios/lib/helpers/cookies.js","./../helpers/buildURL":"../node_modules/axios/lib/helpers/buildURL.js","../core/buildFullPath":"../node_modules/axios/lib/core/buildFullPath.js","./../helpers/parseHeaders":"../node_modules/axios/lib/helpers/parseHeaders.js","./../helpers/isURLSameOrigin":"../node_modules/axios/lib/helpers/isURLSameOrigin.js","../core/createError":"../node_modules/axios/lib/core/createError.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
+},{"./../utils":"node_modules/axios/lib/utils.js","./../core/settle":"node_modules/axios/lib/core/settle.js","./../helpers/cookies":"node_modules/axios/lib/helpers/cookies.js","./../helpers/buildURL":"node_modules/axios/lib/helpers/buildURL.js","../core/buildFullPath":"node_modules/axios/lib/core/buildFullPath.js","./../helpers/parseHeaders":"node_modules/axios/lib/helpers/parseHeaders.js","./../helpers/isURLSameOrigin":"node_modules/axios/lib/helpers/isURLSameOrigin.js","../core/createError":"node_modules/axios/lib/core/createError.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -1367,7 +1367,7 @@ process.chdir = function (dir) {
 process.umask = function () {
   return 0;
 };
-},{}],"../node_modules/axios/lib/defaults.js":[function(require,module,exports) {
+},{}],"node_modules/axios/lib/defaults.js":[function(require,module,exports) {
 var process = require("process");
 'use strict';
 
@@ -1468,7 +1468,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-},{"./utils":"../node_modules/axios/lib/utils.js","./helpers/normalizeHeaderName":"../node_modules/axios/lib/helpers/normalizeHeaderName.js","./adapters/xhr":"../node_modules/axios/lib/adapters/xhr.js","./adapters/http":"../node_modules/axios/lib/adapters/xhr.js","process":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../node_modules/axios/lib/core/dispatchRequest.js":[function(require,module,exports) {
+},{"./utils":"node_modules/axios/lib/utils.js","./helpers/normalizeHeaderName":"node_modules/axios/lib/helpers/normalizeHeaderName.js","./adapters/xhr":"node_modules/axios/lib/adapters/xhr.js","./adapters/http":"node_modules/axios/lib/adapters/xhr.js","process":"../../AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js"}],"node_modules/axios/lib/core/dispatchRequest.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('./../utils');
@@ -1549,7 +1549,7 @@ module.exports = function dispatchRequest(config) {
   });
 };
 
-},{"./../utils":"../node_modules/axios/lib/utils.js","./transformData":"../node_modules/axios/lib/core/transformData.js","../cancel/isCancel":"../node_modules/axios/lib/cancel/isCancel.js","../defaults":"../node_modules/axios/lib/defaults.js"}],"../node_modules/axios/lib/core/mergeConfig.js":[function(require,module,exports) {
+},{"./../utils":"node_modules/axios/lib/utils.js","./transformData":"node_modules/axios/lib/core/transformData.js","../cancel/isCancel":"node_modules/axios/lib/cancel/isCancel.js","../defaults":"node_modules/axios/lib/defaults.js"}],"node_modules/axios/lib/core/mergeConfig.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('../utils');
@@ -1638,7 +1638,7 @@ module.exports = function mergeConfig(config1, config2) {
   return config;
 };
 
-},{"../utils":"../node_modules/axios/lib/utils.js"}],"../node_modules/axios/lib/core/Axios.js":[function(require,module,exports) {
+},{"../utils":"node_modules/axios/lib/utils.js"}],"node_modules/axios/lib/core/Axios.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('./../utils');
@@ -1735,7 +1735,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = Axios;
 
-},{"./../utils":"../node_modules/axios/lib/utils.js","../helpers/buildURL":"../node_modules/axios/lib/helpers/buildURL.js","./InterceptorManager":"../node_modules/axios/lib/core/InterceptorManager.js","./dispatchRequest":"../node_modules/axios/lib/core/dispatchRequest.js","./mergeConfig":"../node_modules/axios/lib/core/mergeConfig.js"}],"../node_modules/axios/lib/cancel/Cancel.js":[function(require,module,exports) {
+},{"./../utils":"node_modules/axios/lib/utils.js","../helpers/buildURL":"node_modules/axios/lib/helpers/buildURL.js","./InterceptorManager":"node_modules/axios/lib/core/InterceptorManager.js","./dispatchRequest":"node_modules/axios/lib/core/dispatchRequest.js","./mergeConfig":"node_modules/axios/lib/core/mergeConfig.js"}],"node_modules/axios/lib/cancel/Cancel.js":[function(require,module,exports) {
 'use strict';
 
 /**
@@ -1756,7 +1756,7 @@ Cancel.prototype.__CANCEL__ = true;
 
 module.exports = Cancel;
 
-},{}],"../node_modules/axios/lib/cancel/CancelToken.js":[function(require,module,exports) {
+},{}],"node_modules/axios/lib/cancel/CancelToken.js":[function(require,module,exports) {
 'use strict';
 
 var Cancel = require('./Cancel');
@@ -1815,7 +1815,7 @@ CancelToken.source = function source() {
 
 module.exports = CancelToken;
 
-},{"./Cancel":"../node_modules/axios/lib/cancel/Cancel.js"}],"../node_modules/axios/lib/helpers/spread.js":[function(require,module,exports) {
+},{"./Cancel":"node_modules/axios/lib/cancel/Cancel.js"}],"node_modules/axios/lib/helpers/spread.js":[function(require,module,exports) {
 'use strict';
 
 /**
@@ -1844,7 +1844,7 @@ module.exports = function spread(callback) {
   };
 };
 
-},{}],"../node_modules/axios/lib/helpers/isAxiosError.js":[function(require,module,exports) {
+},{}],"node_modules/axios/lib/helpers/isAxiosError.js":[function(require,module,exports) {
 'use strict';
 
 /**
@@ -1857,7 +1857,7 @@ module.exports = function isAxiosError(payload) {
   return (typeof payload === 'object') && (payload.isAxiosError === true);
 };
 
-},{}],"../node_modules/axios/lib/axios.js":[function(require,module,exports) {
+},{}],"node_modules/axios/lib/axios.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('./utils');
@@ -1915,25 +1915,55 @@ module.exports = axios;
 // Allow use of default import syntax in TypeScript
 module.exports.default = axios;
 
-},{"./utils":"../node_modules/axios/lib/utils.js","./helpers/bind":"../node_modules/axios/lib/helpers/bind.js","./core/Axios":"../node_modules/axios/lib/core/Axios.js","./core/mergeConfig":"../node_modules/axios/lib/core/mergeConfig.js","./defaults":"../node_modules/axios/lib/defaults.js","./cancel/Cancel":"../node_modules/axios/lib/cancel/Cancel.js","./cancel/CancelToken":"../node_modules/axios/lib/cancel/CancelToken.js","./cancel/isCancel":"../node_modules/axios/lib/cancel/isCancel.js","./helpers/spread":"../node_modules/axios/lib/helpers/spread.js","./helpers/isAxiosError":"../node_modules/axios/lib/helpers/isAxiosError.js"}],"../node_modules/axios/index.js":[function(require,module,exports) {
+},{"./utils":"node_modules/axios/lib/utils.js","./helpers/bind":"node_modules/axios/lib/helpers/bind.js","./core/Axios":"node_modules/axios/lib/core/Axios.js","./core/mergeConfig":"node_modules/axios/lib/core/mergeConfig.js","./defaults":"node_modules/axios/lib/defaults.js","./cancel/Cancel":"node_modules/axios/lib/cancel/Cancel.js","./cancel/CancelToken":"node_modules/axios/lib/cancel/CancelToken.js","./cancel/isCancel":"node_modules/axios/lib/cancel/isCancel.js","./helpers/spread":"node_modules/axios/lib/helpers/spread.js","./helpers/isAxiosError":"node_modules/axios/lib/helpers/isAxiosError.js"}],"node_modules/axios/index.js":[function(require,module,exports) {
 module.exports = require('./lib/axios');
-},{"./lib/axios":"../node_modules/axios/lib/axios.js"}],"app.js":[function(require,module,exports) {
+},{"./lib/axios":"node_modules/axios/lib/axios.js"}],"app.js":[function(require,module,exports) {
 "use strict";
 
 var _axios = _interopRequireDefault(require("axios"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+const createCard = data => "\n  <div class=\"px-4 py-5 sm:px-6 -ml-4 -mt-4 border-b border-gray-200 pb-8 flex justify-between items-center flex-wrap sm:flex-no-wrap\">\n    <div class=\"ml-4 mt-4\">\n      <div class=\"flex items-center\">\n        <div class=\"flex-shrink-0\">\n          <img class=\"h-12 w-12 rounded-full\" src=\"".concat(data.avatar_url, "\" alt=\"\">\n        </div>\n        <div class=\"ml-4\">\n          <h3 class=\"text-lg leading-6 font-medium text-gray-900\">\n            ").concat(data.name, "\n            <span class=\"text-sm leading-5 text-gray-500\">\n                @").concat(data.login, "\n            </span>\n          </h3>\n          <p class=\"text-sm leading-5 text-gray-500\">\n            ").concat(data.public_repos, " repositories. User since ").concat(data.created_at.slice(0, 4), "\n          </p>\n          <p class=\"text-sm leading-5 text-gray-500\">\n            ").concat(data.location || '', "\n          </p>\n          <p class=\"mt-1 text-sm leading-5 text-gray-500\">\n            ").concat(data.bio || '', "\n          </p>\n        </div>\n      </div>\n    </div>\n    <div class=\"ml-4 mt-4 flex-shrink-0 flex\">\n      <span class=\"ml-3 inline-flex rounded-md shadow-sm\">\n        <a href=\"").concat(data.html_url, "\"><button type=\"button\" class=\"mr-2 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-50 active:text-gray-800\">\n          Profile\n        </button>\n        </a>\n        <a href=\"").concat(data.blog, "\"><button type=\"button\" class=\"relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-50 active:text-gray-800\">\n          Website\n        </button>\n        </a>\n      </span>\n    </div>\n  </div>\n");
+
 document.addEventListener('DOMContentLoaded', () => {
+  const usernames = [];
   const form = document.querySelector('form');
   form.addEventListener('submit', async event => {
     event.preventDefault();
-    const username = document.querySelector('input').value;
-    const response = await _axios.default.get("https://api.github.com/users/".concat(username));
-    console.log(response.data);
+    const username = document.querySelector('input').value; // Avoid duplicates
+
+    if (usernames.includes(username)) {
+      alert("User ".concat(username, " is already found"));
+      document.querySelector('input').value = '';
+      return;
+    }
+
+    usernames.push(username); // Clear the input field
+
+    document.querySelector('input').value = ''; // Handle if user not found
+
+    let response = '';
+
+    try {
+      response = await _axios.default.get("https://api.github.com/users/".concat(username));
+    } catch (error) {
+      if (404 === error.response.status) {
+        alert('Username not found');
+      } else {
+        alert('Error');
+        console.log(error.response);
+      }
+    }
+
+    if (response) {
+      const card = createCard(response.data);
+      document.querySelector('#container').insertAdjacentHTML('afterbegin', card);
+      console.log(response.data);
+    }
   });
 });
-},{"axios":"../node_modules/axios/index.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"axios":"node_modules/axios/index.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -1961,7 +1991,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51978" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62419" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -2137,5 +2167,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
+},{}]},{},["../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
 //# sourceMappingURL=/app.js.map
